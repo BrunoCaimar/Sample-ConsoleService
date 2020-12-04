@@ -1,3 +1,10 @@
+# Exemplo MassTransit .NET Core Service - Apresentação Semear
+
+1. Altere as configurações no arquivo `appsettings.json`
+2. Execute o projeto SampleServiceProducer
+3. Execute o projeto SampleServiceConsumer
+
+**Esse exemplo foi baseado em:**
 # Sample MassTransit .NET Core Service
 
 In this sample, a .NET core service is created (using .NET Core 3.1) which supports logging, configuration, and dependency injection, along with a basic MassTransit configuration to connect to RabbitMQ.
