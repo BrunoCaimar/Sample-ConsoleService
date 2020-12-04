@@ -34,12 +34,12 @@ namespace SampleService
 
                     services.AddMassTransit(cfg =>
                     {
-                        //cfg.AddConsumer<TimeConsumer>();
+                        cfg.AddConsumer<QualTeclaConsumer>();
                         cfg.AddBus(ConfigureBus);
                     });
 
                     services.AddHostedService<MassTransitConsoleHostedService>();
-                    services.AddHostedService<QualTeclaProducer>();
+                    //services.AddHostedService<CheckTheTimeService>();
                 })
                 .ConfigureLogging((hostingContext, logging) =>
                 {
@@ -57,7 +57,7 @@ namespace SampleService
             }
         }
 
-        private static IBusControl ConfigureBus(IServiceProvider provider)
+        private static IBusControl ConfigureBus(IRegistrationContext<IServiceProvider> provider)
         {
             AppConfig = provider.GetRequiredService<IOptions<AppConfig>>().Value;
 

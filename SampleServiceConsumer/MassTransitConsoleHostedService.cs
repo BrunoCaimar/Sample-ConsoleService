@@ -21,7 +21,7 @@ namespace SampleService
 
         public async Task StartAsync(CancellationToken cancellationToken)
         {
-            _logger.LogInformation(FiggleFonts.Standard.Render("Bus producer!"));
+            _logger.LogInformation(FiggleFonts.Standard.Render("Bus consumer!"));
             await _bus.StartAsync(cancellationToken).ConfigureAwait(false);
         }
 
